@@ -1,13 +1,16 @@
 angular.module('myApp', [])
-	.controller('MultiplicationCtrl', function($scope){
-		
-		// Function that returns a range of numbers in an array.
-		$scope.numRange = function(start, end){
-			$scope.arr = [];
-			for(var n = start; n <= end; n++){
-				$scope.arr.push(n);
-			}
-			return $scope.arr;
+	.controller('MultiplicationCtrl', function($scope, $attrs){
+		$scope.numLimit = $attrs.initialNumLimit || 10;
+
+		$scope.numbers = function() {
+			var numbers = [];
+			for(var i=0; i<$scope.numLimit; i++){
+				numbers[i] = i + 1;
+			};
+			return numbers;
 		}
-		$scope.numbers = $scope.numRange(1, 10);
+
+		$scope.compute = function(a, b){
+			return a * b;
+		};
 	});
