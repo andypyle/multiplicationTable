@@ -1,0 +1,8 @@
+td {
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	vertical-align: middle;
+
+	border: 1px solid #DDD;
+}
